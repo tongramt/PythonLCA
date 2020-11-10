@@ -144,10 +144,6 @@ class TestLCA(unittest.TestCase):
         # Used further to avoid deleting nodes when nodes have more than one parent or more than two children.
         # The code doesn't work. This proves we need a new implementation for a DAG.
 
-    
-
-
-
 
 
 if __name__ == '__main__':
