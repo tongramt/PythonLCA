@@ -135,9 +135,20 @@ class TestLCA(unittest.TestCase):
         self.assertEqual('b', LCAImplementation.findLCA(root, 'd', 'e'),
                          "Should be b but got: " + str(LCAImplementation.findLCA(root, 'd', 'e')))
 
+    def test_DAG(self):
+        root=Node('a')
+        root.further.left = Node('b')
+        root.right = Node('c')
+        root.left = root.right.left =Node('d')
+        root.further.right = root.right.right = root.left.right = Node('e')
+        # Used further to avoid deleting nodes when nodes have more than one parent or more than two children.
+        # The code doesn't work. This proves we need a new implementation for a DAG.
+
+    
 
 
 
-#Reminder if you don't put the word test in python functions they won't work!!
+
+
 if __name__ == '__main__':
     unittest.main()
