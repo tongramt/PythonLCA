@@ -152,6 +152,9 @@ class TestLCA(unittest.TestCase):
         root.further.right('e')
         root.further.left=root.left=root.right.left
         root.left.right=root.further.right=root.right.right
+
+        self.assertEqual('c', LCAImplementation.findLCA(root, 'd', 'e'),
+                         'Returned c as it is the Lowest Common Ancestor of d and e')
         # used .further.right/left to show where nodes had more than two children
         # This is simply to demonstrate that we cannot write a Directed Acyclic Graph.
         # We cannot go any further in the unit testing than here as each node can only have two children.
